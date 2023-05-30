@@ -64,7 +64,9 @@ const usersController = {
 
       // Check if the password is correct
       const user = userResult.rows[0];
-      const isPasswordCorrect = await bcrypt.compare(password, user.password);
+      const isPasswordCorrect = (password == user.password);
+
+      // const isPasswordCorrect = await bcrypt.compare(password, user.password);
 
       if (!isPasswordCorrect) {
         return res.status(401).json({ message: 'Incorrect password' });
