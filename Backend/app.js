@@ -1,11 +1,11 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const { testDatabaseConnection } = require("./src/config/config");
-const usersRoutes = require("./src/routes/usersRoutes");
-const customerRoutes = require("./src/routes/customerRoutes");
-const tellerDeskRoutes = require("./src/routes/tellerDeskRoutes");
-const queueRoutes = require("./src/routes/queueRoutes");
-const transactionRoutes = require("./src/routes/transactionRoutes");
+const express = require('express');
+const bodyParser = require('body-parser');
+const { testDatabaseConnection } = require('./src/config/config');
+const usersRoutes = require('./src/routes/usersRoutes');
+// const customerRoutes = require('./src/routes/customerRoutes');
+// const tellerDeskRoutes = require('./src/routes/tellerDeskRoutes');
+// const queueRoutes = require('./src/routes/queueRoutes');
+// const transactionRoutes = require('./src/routes/transactionRoutes');
 
 const app = express();
 
@@ -14,11 +14,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Routes
-app.use("/users", usersRoutes);
-app.use("/customers", customerRoutes);
-app.use("/tellerdesk", tellerDeskRoutes);
-app.use("/queue", queueRoutes);
-app.use("/transaction", transactionRoutes);
+app.use('/users', usersRoutes);
+// app.use('/customers', customerRoutes);
+// app.use('/tellerdesk', tellerDeskRoutes);
+// app.use('/queue', queueRoutes);
+// app.use('/transaction', transactionRoutes);
 
 testDatabaseConnection();
 // Start the server
