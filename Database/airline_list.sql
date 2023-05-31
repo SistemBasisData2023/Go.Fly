@@ -28,7 +28,9 @@ CREATE TABLE Airline_list (
   ICAO TEXT NOT NULL,
   Airline TEXT NOT NULL,
   Callsign TEXT NOT NULL,
-  country TEXT NOT NULL REFERENCES country(two_letter)
+  country TEXT NOT NULL REFERENCES country(two_letter),
+  logo TEXT,
+  description TEXT
 );
 
 
