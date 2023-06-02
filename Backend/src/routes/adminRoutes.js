@@ -3,19 +3,22 @@ const router = express.Router();
 
 const adminController = require('../controllers/adminControllers');
 
-// // Route to create a new user
-// router.post('/register', adminController.registerUser);
+// Route to add flights
+router.post('/addFlights', adminController.addFlights);
 
-// // Login route
-// router.post('/login', adminController.loginUser);
+// Route to edit flights
+router.put('/editFlights/:flight_id', adminController.editFlights);
 
-// // Route to get user by ID
-// router.get('/get/:user_id', adminController.getUserById);
+// Route to add bookings
+router.post('/addBookings', adminController.addBookings);
 
-// // Route to update user by ID
-// router.put('/update/:user_id', adminController.updateUserById);
+// Route to edit bookings
+router.put('/editBookings/:booking_id', adminController.editBookings);
 
-// // // Route to delete user by ID
-// router.delete('/delete/:user_id', adminController.deleteUserById);
+// Route to add aircraft
+router.post('/addAircraft', adminController.addAircraft);
+
+// Route to edit airline
+router.put('/editAirline/:airline_id', adminController.editAirline);
 
 module.exports = router;

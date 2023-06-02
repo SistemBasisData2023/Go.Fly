@@ -184,8 +184,6 @@ const accountController = {
     }
   },
   
-  
-
   deleteUserById: async (req, res) => {
     try {
       const { user_id } = req.params;

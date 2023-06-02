@@ -179,37 +179,23 @@ EXECUTE FUNCTION check_seats_booked();
 --=====================================================================
 --BOOKINGS
 --=====================================================================
--- Create the validate_seat_numbers trigger function
-CREATE FUNCTION validate_seat_numbers(arr_len INT, seats_booked INT) RETURNS BOOLEAN AS $$
-BEGIN
-    RETURN arr_len <= seats_booked;
-END;
-$$ LANGUAGE plpgsql;
-
--- Create a function to validate unique seat_numbers within the array
-CREATE FUNCTION validate_unique_seat_numbers(seat_numbers INTEGER[]) RETURNS BOOLEAN AS $$
-BEGIN
-    RETURN seat_numbers = ARRAY(SELECT DISTINCT unnest(seat_numbers));
-END;
-$$ LANGUAGE plpgsql;
 
 -- Create the validate_seat_numbers_capacity trigger function
 CREATE FUNCTION validate_seat_numbers_capacity() RETURNS TRIGGER AS $$
 DECLARE
-    capacity INTEGER;
+    aircraft_capacity INTEGER;
     booked_count INTEGER;
 BEGIN
-    SELECT capacity INTO capacity FROM Aircraft_model WHERE aircraft_id = (SELECT aircraft_id FROM flights WHERE flight_id = NEW.flight_id);
+    SELECT capacity INTO aircraft_capacity FROM Aircraft_model WHERE aircraft_id = (SELECT aircraft_id FROM flights WHERE flight_id = NEW.flight_id);
 
     booked_count := array_length(NEW.seat_numbers, 1);
-    IF booked_count > capacity THEN
+    IF booked_count > aircraft_capacity THEN
         RAISE EXCEPTION 'Seat numbers exceed the capacity of the aircraft.';
     END IF;
 
     RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
-
 -- Create the booking_status enum type
 CREATE TYPE booking_status AS ENUM ('Unpaid', 'Booked');
 
@@ -221,10 +207,7 @@ CREATE TABLE booking (
     booking_date TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP,
     seats_booked INTEGER DEFAULT 1,
     seat_numbers INTEGER[],
-    status booking_status NOT NULL DEFAULT 'Unpaid',
-    CONSTRAINT unique_booking UNIQUE (user_id, flight_id),
-    CONSTRAINT check_seat_numbers CHECK (validate_seat_numbers(array_length(seat_numbers, 1), seats_booked)),
-    CONSTRAINT check_unique_seat_numbers CHECK (validate_unique_seat_numbers(seat_numbers))
+    status booking_status NOT NULL DEFAULT 'Unpaid'
 );
 
 -- Create the validate_seat_numbers_capacity_trigger
