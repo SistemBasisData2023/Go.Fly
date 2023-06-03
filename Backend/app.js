@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const { testDatabaseConnection } = require('./src/config/config');
 const accountRoutes = require('./src/routes/accountRoutes');
 const adminRoutes = require('./src/routes/adminRoutes');
-// const tellerDeskRoutes = require('./src/routes/tellerDeskRoutes');
+const flightsRoutes = require('./src/routes/flightsRoutes');
 // const queueRoutes = require('./src/routes/queueRoutes');
 // const transactionRoutes = require('./src/routes/transactionRoutes');
 
@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 // Routes
 app.use('/account', accountRoutes);
 app.use('/admin', adminRoutes);
-// app.use('/tellerdesk', tellerDeskRoutes);
+app.use('/flights', flightsRoutes);
 // app.use('/queue', queueRoutes);
 // app.use('/transaction', transactionRoutes);
 

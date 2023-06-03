@@ -257,6 +257,7 @@ const adminController = {
             const seatResult = await pool.query(seatQuery, seatValues);
     
             if (seatResult.rowCount > 0) {
+                console.log('Some or all of the seat numbers are already booked for the same flight');
                 return res.status(400).json({ message: 'Some or all of the seat numbers are already booked for the same flight' });
             }
     
@@ -266,12 +267,13 @@ const adminController = {
                     user_id,
                     flight_id,
                     seats_booked,
-                    seat_numbers
+                    seat_numbers,
+                    status
                 )
-                VALUES ($1, $2, $3, $4)
+                VALUES ($1, $2, $3, $4, 'Booked')
                 RETURNING booking_id
             `;
-    
+
             const insertBookingValues = [
                 user_id,
                 flight_id,
@@ -333,25 +335,81 @@ const adminController = {
     
 
     addAircraft: async (req, res) => {
+        console.log('addAircraft');
         try {
-        // Logic to add aircraft
-        res.send('Add aircraft');
+            const { model, manufacturer, capacity, country } = req.body;
+        
+            // Check if the aircraft model already exists
+            const checkModelQuery = 'SELECT * FROM Aircraft_model WHERE model = $1';
+            const checkModelValues = [model];
+            const modelResult = await pool.query(checkModelQuery, checkModelValues);
+        
+            if (modelResult.rowCount > 0) {
+                console.log('Aircraft model already exists');
+                return res.status(400).json({ message: 'Aircraft model already exists' });
+            }
+        
+            // Insert the new aircraft model into the Aircraft_model table
+            const insertAircraftQuery = `
+                INSERT INTO Aircraft_model (model, manufacturer, capacity, country)
+                VALUES ($1, $2, $3, $4)
+                RETURNING aircraft_id
+            `;
+        
+            const insertAircraftValues = [model, manufacturer, capacity, country];
+        
+            const insertedAircraft = await pool.query(insertAircraftQuery, insertAircraftValues);
+        
+            const aircraftId = insertedAircraft.rows[0].aircraft_id;
+            
+            console.log('Aircraft added successfully:');
+            console.log(req.body);
+            res.status(201).json({ message: `Aircraft '${model}' added successfully`, aircraft_id: aircraftId });
         } catch (error) {
-        console.error('Error adding aircraft', error);
-        res.status(500).json({ message: 'Internal server error' });
+            console.error('Error adding aircraft', error);
+            res.status(500).json({ message: 'Internal server error' });
         }
     },
 
     editAirline: async (req, res) => {
+        console.log('editAirline');
+        const urlRegex = /\.(png)$/i;
         try {
-        const airlineId = req.params.airline_id;
-        // Logic to edit airline with the given airlineId
-        res.send(`Edit airline with ID ${airlineId}`);
+            const airlineId = req.params.airline_id;
+            const { logo, description } = req.body;
+
+            // Check if the airline with the given airlineId exists
+            const checkAirlineQuery = 'SELECT * FROM Airline_list WHERE id = $1';
+            const checkAirlineValues = [airlineId];
+            const airlineResult = await pool.query(checkAirlineQuery, checkAirlineValues);
+
+            if (airlineResult.rowCount === 0) {
+                console.log('Invalid airline ID');
+                return res.status(400).json({ message: 'Invalid airline ID' });
+            }
+
+            // Validate the logo field as a link to a PNG image
+            if (logo && !urlRegex.test(logo)) {
+                console.log('Invalid logo URL. Please provide a link to a PNG image');
+                return res.status(400).json({ message: 'Invalid logo URL. Please provide a link to a PNG image' });
+            }
+
+            // Update the airline details (only logo and description)
+            const updateAirlineQuery = `
+                UPDATE Airline_list
+                SET logo = $1, description = $2
+                WHERE id = $3
+            `;
+            const updateAirlineValues = [logo, description, airlineId];
+            await pool.query(updateAirlineQuery, updateAirlineValues);
+
+            res.status(200).json({ message: `Airline with ID ${airlineId} updated successfully` });
         } catch (error) {
-        console.error('Error editing airline', error);
-        res.status(500).json({ message: 'Internal server error' });
+            console.error('Error editing airline', error);
+            res.status(500).json({ message: 'Internal server error' });
         }
-    },
+    }
+
 };
 
 module.exports = adminController;
