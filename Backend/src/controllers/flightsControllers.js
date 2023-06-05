@@ -173,7 +173,7 @@ const flightsControllers = {
             res.status(500).json({ message: 'Internal server error' });
         }
     },
-    
+
     payBooking: async (req, res) => {
         try {
             const bookingId = req.params.bookingId;
@@ -255,7 +255,9 @@ const flightsControllers = {
             console.error('Error searching airports', error);
             res.status(500).json({ message: 'Internal server error' });
         }
-    }  
+    }
+    
+
 };
 
 module.exports = flightsControllers;
