@@ -1,5 +1,9 @@
 import "./global.css";
 import "./index.css"
+import headerAvatar from "../../assets/icons";
+import calendarWithDates from "../../assets/icons/32--calendar-with-dates.svg";
+import eyeShowVisible1 from "../../assets/icons/32--eye-show-visible1.svg";
+import eyeShowVisible from "../../assets/icons/32--eye-show-visible.svg";
 
 
 function Flights() {
@@ -23,7 +27,7 @@ function Flights() {
             <img
               className="header-avatar"
               alt=""
-              src="../public/header--avatar.svg"
+              src={headerAvatar}
             />
           </div>
         </div>
@@ -48,14 +52,14 @@ function Flights() {
                 <img
                   className="calendar-with-dates"
                   alt=""
-                  src="../public/32--calendar-with-dates.svg"
+                  src={calendarWithDates}
                 />
 
                 <div className="label3">Depart - Return</div>
                 <img
                   className="eye-show-visible"
                   alt=""
-                  src="../public/32--eye-show-visible.svg"
+                  src={eyeShowVisible1}
                 />
               </div>
               <div className="helper-text">
@@ -74,7 +78,7 @@ function Flights() {
                 <img
                   className="eye-show-visible"
                   alt=""
-                  src="../public/32--eye-show-visible.svg"
+                  src={eyeShowVisible}
                 />
               </div>
               <div className="helper-text">
