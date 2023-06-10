@@ -1,0 +1,255 @@
+/* LANDING */
+.landing-wrapper {
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  background: url(/src/assets/bg-landing.png);
+  background-position: center;
+}
+.w-75 {
+  width: 70%;
+}
+.w-25 {
+  width: 30%;
+}
+.max-w-screen {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.title-landing {
+  color: #eb5757;
+  text-shadow: 1px 1px #ffd84ebf;
+  font-size: 4rem;
+  text-align: center;
+}
+.input-container {
+  position: relative;
+  width: 100%;
+}
+.input-container > input {
+  width: 100%;
+  padding: 0.5rem;
+  padding-left: 3rem;
+  color: #eb5757;
+  border: 1pt solid #cbd4e6;
+  cursor: pointer;
+  text-align: start !important;
+  background: white;
+}
+.icon-input {
+  color: #eb5757;
+  position: absolute;
+  display: flex;
+  font-size: 1.2rem;
+  left: 2%;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+}
+.landing-form {
+  display: flex;
+}
+.pop-over {
+  position: absolute;
+  z-index: 2;
+  overflow-y: scroll;
+  background: white;
+  border: 1pt solid #cbd4e6;
+  height: 19.5rem;
+  border-radius: 5px;
+  width: 14.5rem;
+  filter: drop-shadow(0px 2px 4px rgba(7, 4, 146, 0.1))
+    drop-shadow(0px 24px 60px rgba(6, 47, 125, 0.05))
+    drop-shadow(0px 12px 24px rgba(27, 59, 119, 0.05));
+}
+.pop-over.adult {
+  height: 4rem !important;
+  overflow: hidden;
+}
+#airport {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin: 0.5rem;
+  padding-top: 0.5rem;
+  color: #6e7491;
+  padding-bottom: 0.5rem;
+}
+#airport:hover {
+  background-color: #eb5757;
+  border-radius: 3px;
+}
+.btn-plus-minus {
+  color: #eb5757;
+  background-color: #fafafa;
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 0.5rem;
+  width: fit-content;
+  height: fit-content;
+}
+/* FOOTER */
+.footer-wrapper {
+  padding: 2rem;
+}
+.btn-search {
+  background-color: #eb5757;
+  color: white;
+  border: none;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 3px;
+}
+hr {
+  color: #cbd4e6 !important;
+}
+.footer-wrapper > .logo-wrapper,
+.footer-wrapper > .logo-wrapper > div {
+  gap: 2rem;
+  display: flex;
+  align-items: start;
+}
+@media screen and (max-width: 768px) {
+  .filter-wrapper {
+    flex-direction: column;
+  }
+  select {
+    width: 100%;
+  }
+  .w-25 {
+    width: 100%;
+  }
+  .w-75 {
+    width: 100%;
+  }
+  .flex {
+    flex-direction: column;
+  }
+  .btn-search {
+    width: 100%;
+  }
+  .list-total-wrapper,
+  .btn-show-flights,
+  .subtotal-text {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .footer-wrapper > div,
+  .landing-form,
+  .footer-wrapper > .logo-wrapper > div {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .footer-wrapper > .logo-wrapper {
+    align-items: center;
+  }
+  .landing-form {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .title-landing {
+    font-size: 3rem;
+  }
+}
+.menu-wrapper {
+  display: flex;
+  gap: 1rem;
+  color: #6e7491;
+  flex-direction: column;
+}
+.menu-wrapper > a,
+.menu-wrapper > p {
+  color: #7c8db0 !important;
+}
+.footer-wrapper > div,
+.sosmed-wrappe {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.sosmed-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-wrapper > .sosmed-wrapper > div {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1.3rem;
+  color: #6e7491;
+}
+
+/* search flights */
+.filter-wrapper {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding-bottom: 1rem;
+  margin: 1rem;
+  padding-top: 1rem;
+}
+
+.filter-wrapper > select {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 2px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border: 1px solid #cbd4e6;
+}
+.filter-wrapper > div {
+  color: #eb5757;
+}
+.list-total-wrapper {
+  padding: 1rem;
+  border: 1px solid #e9e8fc;
+  border-radius: 12px;
+}
+.flex {
+  display: flex;
+}
+.gap-6 {
+  gap: 2rem;
+}
+.list-total-wrapper > div > .item {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: end;
+  font-size: 0.8rem;
+  align-items: center;
+}
+.allflight {
+  justify-items: start !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+}
+.list-total-wrapper > div {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.item-list-total {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.subtotal-text {
+  display: flex;
+  font-weight: 600;
+  justify-content: end;
+  flex-direction: column;
+  align-items: end;
+}
+.btn-show-flights {
+  color: #eb5757;
+  border: 1px solid #eb5757;
+  padding: 0.5rem;
+  background-color: white;
+  border-radius: 4px;
+  font-weight: 500;
+}
