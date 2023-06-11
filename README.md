@@ -1,6 +1,6 @@
 # Go.Fly
 
-![alt text](https://github.com/grandier/Blood-Works/blob/master/public/images/logo_bloodworks.png)
+![alt text](https://github.com/SistemBasisData2023/Go.Fly/blob/main/Assets/GOFL%20LIVERY.png)
 <p align="center">
   <i align="center">Book Your Flight Tickets Here! (SBD L12 Final Project)</i>
 </p>
@@ -205,7 +205,7 @@ status (booking_status, Default: 'Unpaid'): The status of the booking.
 
 ```UML:```
 
-![alt text](https://github.com/grandier/Blood-Works/blob/master/Information/UML%20Database_Blood%20Works.png)
+![alt text](https://github.com/SistemBasisData2023/Go.Fly/blob/main/Database/GOFLY%20DATABASE%20ERD.png)
 
 </details>
 
@@ -215,16 +215,16 @@ status (booking_status, Default: 'Unpaid'): The status of the booking.
 
   ```Flowchart of User```
 
-![alt text](https://github.com/grandier/Blood-Works/blob/master/Information/Flowchart_User_Blood%20Works.png)
+![alt text](https://github.com/SistemBasisData2023/Go.Fly/blob/main/Assets/flowchartUser.jpg)
 
 ```Flowchart of Admin```
 
-![alt text](https://github.com/grandier/Blood-Works/blob/master/Information/Flowchart_Admin_Blood%20Works.png)
+![alt text](https://github.com/SistemBasisData2023/Go.Fly/blob/main/Assets/flowchartAdmin.jpg)
 
 </details>
 
 
 ---
-![alt text](https://github.com/grandier/Blood-Works/blob/master/public/images/logo_bloodworks.png)
+![alt text](https://github.com/SistemBasisData2023/Go.Fly/blob/main/Assets/GOFL%20LIVERY.png)
 
 ---
