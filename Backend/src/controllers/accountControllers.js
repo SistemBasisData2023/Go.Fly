@@ -1,9 +1,11 @@
 const bcrypt = require('bcrypt');
 const { pool } = require('../config/config');
 const { v4: uuidv4 } = require('uuid');
+const jwt = require('jsonwebtoken');
 
 const accountController = {
   registerUser: async (req, res) => {
+    console.log('registerUser');
     try {
       const { name, surname, gender, birthdate, email, phone_number, country, province, password } = req.body;
   
@@ -62,9 +64,23 @@ const accountController = {
         province,
         hashedPassword
       ];
-      await pool.query(registerUserQuery, registerUserValues);
-  
-      res.status(201).json({ message: 'User registered successfully' });
+      const userResult = await pool.query(
+        registerUserQuery,
+        registerUserValues
+      );
+      const user = userResult.rows[0];
+      const token = jwt.sign({ user_id: user.id }, process.env.TOKEN_KEY, {
+        expiresIn: '7d',
+      });
+
+      user.token = token;
+      const response = {
+      user,
+      message: 'User registered successfully',
+      };
+      res.status(200).json(response);
+      console.log('registerUser success');
+      console.log(user);
     } catch (error) {
       console.error('Error registering user', error);
       res.status(500).json({ message: 'Internal server error' });
@@ -96,7 +112,17 @@ const accountController = {
         return res.status(401).json({ message: 'Incorrect password' });
       }
 
+      // Generate JWT token with 1 week expiration
+      const token = jwt.sign({ user_id: user.id }, process.env.TOKEN_KEY, {
+        expiresIn: '7d',
+      });
+
+      // Include the token in the response
+      user.token = token;
+
       res.status(200).json(user);
+      console.log('loginUser success');
+      console.log(user);
     } catch (error) {
       console.error('Error logging in user', error);
       res.status(500).json({ message: 'Internal server error' });

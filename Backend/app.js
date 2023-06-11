@@ -4,9 +4,6 @@ const { testDatabaseConnection } = require('./src/config/config');
 const accountRoutes = require('./src/routes/accountRoutes');
 const adminRoutes = require('./src/routes/adminRoutes');
 const flightsRoutes = require('./src/routes/flightsRoutes');
-// const queueRoutes = require('./src/routes/queueRoutes');
-// const transactionRoutes = require('./src/routes/transactionRoutes');
-
 const app = express();
 
 // Middleware
