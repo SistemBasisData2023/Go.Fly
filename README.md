@@ -19,7 +19,7 @@
 
 - [@jordinia](https://github.com/Jordinia) - 2106655034
 - [@dyenta](https://www.github.com/dyenta) - 
-- [@fatimakhairunnisa](hhttps://github.com/fatimakhairunnisa) - 
+- [@fatimakhairunnisa](hhttps://github.com/fatimakhairunnisa) - 2106651515
 
 ---
 ## Introduction
