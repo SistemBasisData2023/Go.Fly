@@ -7,12 +7,11 @@
 
 <p align ="center">
   <a href="#authors">Authors</a> •
-  <a href="#introduction">Introduction</a> •
-  <a href="#how-to-use">How To Use</a> •
-  <a href="#language-and-tools">Language and Tools</a> •
-  <a href="#tables">Tables</a> •
-  <a href="#flowchart">Flowchart</a> •
-  <a href="#relational-table-and-uml">Relational Table and UML</a> 
+  <a href="#Introduction">Introduction</a> •
+  <a href="#Installation">Installation</a> •
+  <a href="#language-and-tools">Technologies</a> •
+  <a href="#Tables">Tables</a> •
+  <a href="#User and Admin Flowchart View">Flowchart, Relational Table, and UML</a> 
 </p>
 
 ## Authors
@@ -201,7 +200,7 @@ status (booking_status, Default: 'Unpaid'): The status of the booking.
 
   ```Table Relational or ERD:```
 
-![alt text](https://github.com/grandier/Blood-Works/blob/master/Information/ERD_Blood%20Works.jpg)
+![alt text](https://github.com/SistemBasisData2023/Go.Fly/blob/main/Assets/TableRelational.jpg)
 
 ```UML:```
 
