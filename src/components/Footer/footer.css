@@ -1,43 +1,93 @@
-.footer{
-    padding-top: 70px;
-    padding-bottom: 30px;
-}
-
-.footer .logo img{
-    width: 70%;
-    margin-bottom: 1rem;
-}
-
-.footer .logo p{
-    color: var(--text-color);
-    font-size: medium;
-}
-
-.social_links span a{
-    text-decoration: none;
-    color: var(--heading-color);
-    font-size: 1.2rem;
-}
-
-.footer_link-title{
-    color: var(--heading-color);
-    margin-bottom: 1rem;
-}
-
-.footer_menu li a,
-.footer_company li a{
-    text-decoration: none;
-    color: var(--text-color);
-    font-size: 1.1rem;
-}
-
-.footer_quick-links h6 span i {
-    color: var(--secondary-color);
-    font-size: 1.1rem;
-
-}
-
-.copyright{
-    color: var(--text-color);
-    font-size: 1rem;
-}
+.footer-wrapper {
+    padding: 2rem;
+  }
+  .btn-search {
+    background-color: #eb5757;
+    color: white;
+    border: none;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 3px;
+  }
+  hr {
+    color: #cbd4e6 !important;
+  }
+  .footer-wrapper > .logo-wrapper,
+  .footer-wrapper > .logo-wrapper > div {
+    gap: 2rem;
+    display: flex;
+    align-items: start;
+  }
+  @media screen and (max-width: 768px) {
+    .filter-wrapper {
+      flex-direction: column;
+    }
+    select {
+      width: 100%;
+    }
+    .w-25 {
+      width: 100%;
+    }
+    .w-75 {
+      width: 100%;
+    }
+    .flex {
+      flex-direction: column;
+    }
+    .btn-search {
+      width: 100%;
+    }
+    .list-total-wrapper,
+    .btn-show-flights,
+    .subtotal-text {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+    .footer-wrapper > div,
+    .landing-form,
+    .footer-wrapper > .logo-wrapper > div {
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+    }
+    .footer-wrapper > .logo-wrapper {
+      align-items: center;
+    }
+    .landing-form {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+    .title-landing {
+      font-size: 3rem;
+    }
+  }
+  .menu-wrapper {
+    display: flex;
+    gap: 1rem;
+    color: #6e7491;
+    flex-direction: column;
+  }
+  .menu-wrapper > a,
+  .menu-wrapper > p {
+    color: #7c8db0 !important;
+  }
+  .footer-wrapper > div,
+  .sosmed-wrappe {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .sosmed-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-wrapper > .sosmed-wrapper > div {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 1.3rem;
+    color: #6e7491;
+  }
