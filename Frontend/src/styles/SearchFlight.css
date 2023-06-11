@@ -1,0 +1,67 @@
+/* search flights */
+.filter-wrapper {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding-bottom: 1rem;
+    margin: 1rem;
+    padding-top: 1rem;
+  }
+  
+  .filter-wrapper > select {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 2px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border: 1px solid #cbd4e6;
+  }
+  .filter-wrapper > div {
+    color: #eb5757;
+  }
+  .list-total-wrapper {
+    padding: 1rem;
+    border: 1px solid #e9e8fc;
+    border-radius: 12px;
+  }
+  .flex {
+    display: flex;
+  }
+  .gap-6 {
+    gap: 2rem;
+  }
+  .list-total-wrapper > div > .item {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: end;
+    font-size: 0.8rem;
+    align-items: center;
+  }
+  .allflight {
+    justify-items: start !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+  .list-total-wrapper > div {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .item-list-total {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .subtotal-text {
+    display: flex;
+    font-weight: 600;
+    justify-content: end;
+    flex-direction: column;
+    align-items: end;
+  }
+  .btn-show-flights {
+    color: #eb5757;
+    border: 1px solid #eb5757;
+    padding: 0.5rem;
+    background-color: white;
+    border-radius: 4px;
+    font-weight: 500;
+  }
