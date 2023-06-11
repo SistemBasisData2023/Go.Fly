@@ -47,6 +47,7 @@ const Header = () => {
                 
                 <div className="nav_right d-flex align-items-center gap-4">
                     <div className="nav_btn d-flex align-items-center gap-4">
+                        <Button className="btn secondary_btn"><Link to='/flight'>Flight</Link></Button>
                         <Button className="btn secondary_btn"><Link to='/login'>Login</Link></Button>
                         <Button className="btn primary_btn"><Link to='/register'>Register</Link></Button>
                     </div>

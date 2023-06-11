@@ -10,6 +10,12 @@ import ThankYou from '../pages/ThankYou';
 import Booking from "../pages/Booking";
 import Search from "../pages/Search";
 import Admin from "../pages/Admin/Admin";
+import AddFlight from "../pages/Admin/AddFlight";
+import EditFlight from "../pages/Admin/EditFlight";
+import AddBooking from "../pages/Admin/AddBooking";
+import EditBooking from "../pages/Admin/EditBooking";
+import AddAircraft from "../pages/Admin/AddAircraft";
+import EditAirline from "../pages/Admin/EditAirline";
 
 const Routers = () => {
     return (
@@ -24,6 +30,12 @@ const Routers = () => {
         <Route path='/booking' element={<Booking />}/>
         <Route path='/search' element={<Search />}/>
         <Route path='/admin' element={<Admin />}/>
+        <Route path='/admin/add-flight' element={<AddFlight />}/>
+        <Route path='/admin/edit-flight/:id' element={<EditFlight />}/>
+        <Route path='/admin/add-booking' element={<AddBooking />}/>
+        <Route path='/admin/edit-booking/:id' element={<EditBooking />}/>
+        <Route path='/admin/add-aircraft' element={<AddAircraft />}/>
+        <Route path='/admin/edit-airline/:id' element={<EditAirline />}/>
     </Routes>
     )
 };

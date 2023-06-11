@@ -1,0 +1,49 @@
+.admin-wrapper {
+    margin-left: 6rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-right: 10rem;
+}
+
+.admin-wrapper h1 {
+    color: #eb5757;
+    margin-bottom: 1rem;
+}
+
+.admin-wrapper h2 {
+    color: #6E7491;
+    margin-bottom: 1rem;
+}
+
+.admin-wrapper h3 {
+    color: #6E7491;
+    margin-bottom: 1rem;
+}
+
+.icon-input {
+    color: #eb5757;
+    position: absolute;
+    font-size: 2rem;
+    left: 2%;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+  }
+
+.button-group {
+    display: Inline-block;
+    margin-right: 10rem;
+    margin-bottom: 1rem;
+}
+
+.btn-admin {
+    background-color: #eb5757;
+    color: white;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
