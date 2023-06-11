@@ -1,0 +1,100 @@
+.list-payment-wrapper {
+  margin-left: 8rem;
+}
+
+.list-total-wrapper {
+  padding: 1rem;
+  border: 1px solid #e9e8fc;
+  border-radius: 12px;
+  margin-top: 6rem;
+}
+.flex {
+  display: flex;
+}
+
+.list-payment-wrapper input{
+  width: 50%;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #7C8DB0;
+  border-style: solid;
+  border-color: #6E7491;
+  margin-top: 0.5rem;
+}
+
+.list-payment-wrapper input[type="checkbox"]{
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+}
+
+.list-payment-wrapper h1 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #eb5757;
+  font-size: 2rem;
+}
+
+.list-payment-wrapper h2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #6E7491;
+  font-size: 1rem;
+}
+
+.list-payment-wrapper p {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #7C8DB0;
+}
+
+.gap-6 {
+  gap: 2rem;
+}
+.list-total-wrapper > div > .item {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: end;
+  font-size: 0.8rem;
+  align-items: center;
+}
+.allflight {
+  justify-items: start !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+}
+.list-total-wrapper > div {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.item-list-total {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.subtotal-text {
+  display: flex;
+  font-weight: 600;
+  justify-content: end;
+  flex-direction: column;
+  align-items: end;
+}
+.btn-show-flights {
+  color: #eb5757;
+  border: 1px solid #eb5757;
+  padding: 0.5rem;
+  background-color: white;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.btn-search {
+  background-color: #eb5757;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
