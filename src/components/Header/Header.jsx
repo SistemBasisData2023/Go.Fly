@@ -2,27 +2,8 @@ import React , {useRef, useEffect} from "react";
 import {Container, Row, Button} from 'reactstrap'
 import {NavLink, Link} from 'react-router-dom'
 
-import logo from '../../assets/images/logo.jpg'
+import logo from "../../assets/images/logo1.png"
 import './header.css'
-
-const nav_links = [
-    {
-        path: '/home',
-        display: 'Home'
-    },
-    {
-        path: '/about',
-        display: 'About'
-    },
-    {
-        path: '/tour',
-        display: 'Tours'
-    },
-    {
-        path: '/gallery',
-        display: 'Gallery'
-    }
-]
 
 const Header = () => {
 
@@ -50,21 +31,16 @@ const Header = () => {
             justify-content-between">
 
                 {/* Logo Start*/}
-                <div className="Logo">
-                    <img src={logo} alt=""/>
-                </div>
+                <Link to='/flight'>
+                    <div className="Logo">
+                        <img src={logo} alt=""/>
+                    </div>
+                </Link>
                 {/* Logo End */}
 
                 {/* Menu Start*/}
                 <div className="Navigation">
                     <ul className="menu d-flex align-items-center gap-5">
-                        {nav_links.map((item, index) => (
-                            <li className="nav_item" key={index}>
-                                <NavLink to={item.path} className={navClass=> navClass.isActive ? 'active_link' : ''}>
-                                {item.display}</NavLink>
-                            </li>
-                            ))
-                        }
                     </ul>
                 </div>
                 {/* Menu End */}
@@ -74,10 +50,6 @@ const Header = () => {
                         <Button className="btn secondary_btn"><Link to='/login'>Login</Link></Button>
                         <Button className="btn primary_btn"><Link to='/register'>Register</Link></Button>
                     </div>
-
-                    <span className="menu">
-                        <i class="ri-menu-line"></i>
-                    </span>
                 </div>
             </div>
         </Row>

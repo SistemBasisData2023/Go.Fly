@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import {Container, Row, Col, Form, FormGroup, Button} from 'reactstrap'
 import {Link} from 'react-router-dom'
 import '../styles/login.css'
-import loginImg from '../assets/images/login2.svg'
+import loginImg from '../assets/images/Plane.png'
 
 const Login = () => {
 
@@ -19,6 +19,10 @@ const Login = () => {
         e.preventDefault()
     }
 
+    function myFunction() {
+        alert("Login Successful!");
+      }
+
     return <section>
         <Container>
             <Row>
@@ -27,10 +31,9 @@ const Login = () => {
                         <div className="login_img">
                             <img src={loginImg} alt=""/>
                         </div>
-
                         <div className="login_form">
-                            <h2>Sign up for GoFly!</h2>
-                            <h1>Sign up using your email address and password below to get started.</h1>
+                            <h2>Sign in for GoFly!</h2>
+                            <h1>Sign in using your email address and password below to get started.</h1>
                             <Form onSubmit={handleClick}>
                                 <FormGroup>
                                     <input type="email" placeholder="Email" required id="email" onChange={handleChange}/>
@@ -42,9 +45,11 @@ const Login = () => {
                                     <input type="checkbox" />
                                     <span>I agree to the terms and conditions</span>
                                 </label>
-                                <Button className="auth_btn btn secondary_btn" type="submit">Login</Button>
+                                <Link to="/flight">
+                                    <Button className="auth_btn btn secondary_btn" type="submit" onClick={myFunction} onChange={handleChange}>Login</Button>
+                                </Link>
                             </Form>
-                            <p>Already Have an Account? <Link to='/register'>Sign In!</Link></p>
+                            <p>Don’t Have an Account? <Link to='/register'>Sign Up!</Link></p>
                         </div>
                     </div>
                 </Col>

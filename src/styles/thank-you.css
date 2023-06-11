@@ -1,9 +1,22 @@
-.thank_you span i{
-    font-size: 4rem;
-    color: green;
+.thank-you-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7rem;
+    margin-bottom: 7rem;
+    text-align: center;
+    background: url("../assets/images/Map1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.thank_you h1{
+.thank-you-wrapper h1{
+    font-size: 4rem;
+    color: #eb5757;
+}
+
+.thank-you-wrapper p{
     font-size: 3.6rem;
-    font-family: var(--subtitle-font-name);
+    color: #6E7491;
 }

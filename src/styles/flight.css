@@ -1,0 +1,92 @@
+.landing-wrapper {
+    min-height: 100vh;
+    display: grid;
+    align-items: center;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    background: url("../assets/images/Map1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .w-75 {
+    width: 70%;
+  }
+  .w-25 {
+    width: 30%;
+  }
+  .max-w-screen {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .title-landing {
+    color: #eb5757;
+    text-shadow: 1px 1px #ffd84ebf;
+    font-size: 4rem;
+    text-align: center;
+  }
+  .input-container {
+    position: relative;
+    width: 100%;
+  }
+  .input-container > input {
+    width: 100%;
+    padding: 0.5rem;
+    padding-left: 3rem;
+    color: #eb5757;
+    border: 1pt solid #cbd4e6;
+    cursor: pointer;
+    text-align: start !important;
+    background: white;
+  }
+  .icon-input {
+    color: #eb5757;
+    position: absolute;
+    font-size: 1.2rem;
+    left: 2%;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+  }
+  .landing-form {
+    display: flex;
+  }
+  .pop-over {
+    position: absolute;
+    z-index: 2;
+    overflow-y: scroll;
+    background: white;
+    border: 1pt solid #cbd4e6;
+    height: 19.5rem;
+    border-radius: 5px;
+    width: 14.5rem;
+    filter: drop-shadow(0px 2px 4px rgba(7, 4, 146, 0.1))
+      drop-shadow(0px 24px 60px rgba(6, 47, 125, 0.05))
+      drop-shadow(0px 12px 24px rgba(27, 59, 119, 0.05));
+  }
+  .pop-over.adult {
+    height: 4rem !important;
+    overflow: hidden;
+  }
+  #airport {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin: 0.5rem;
+    padding-top: 0.5rem;
+    color: #6e7491;
+    padding-bottom: 0.5rem;
+  }
+  #airport:hover {
+    background-color: #eb5757;
+    border-radius: 3px;
+  }
+  .btn-plus-minus {
+    color: #fff;
+    background-color: #eb5757;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 0.5rem;
+    width: fit-content;
+    height: fit-content;
+  }
