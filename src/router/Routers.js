@@ -2,8 +2,6 @@ import React from "react"
 import {Routes, Route, Navigate} from "react-router-dom"
 
 import Flight from '../pages/Flight';
-import Tours from '../pages/Tours';
-import TourDetails from '../pages/TourDetails';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
 import ThankYou from '../pages/ThankYou';
@@ -22,8 +20,6 @@ const Routers = () => {
     <Routes>
         <Route path='/' element={<Navigate to='flight'/>}/>
         <Route path='/flight' element={<Flight />}/>
-        <Route path='/tour' element={<Tours />}/>
-        <Route path='/tour/:id' element={<TourDetails />}/>
         <Route path='/login' element={<Login />}/>
         <Route path='/register' element={<Register />}/>
         <Route path='/thank-you' element={<ThankYou />}/>
@@ -31,11 +27,11 @@ const Routers = () => {
         <Route path='/search' element={<Search />}/>
         <Route path='/admin' element={<Admin />}/>
         <Route path='/admin/add-flight' element={<AddFlight />}/>
-        <Route path='/admin/edit-flight/:id' element={<EditFlight />}/>
+        <Route path='/admin/edit-flight' element={<EditFlight />}/>
         <Route path='/admin/add-booking' element={<AddBooking />}/>
-        <Route path='/admin/edit-booking/:id' element={<EditBooking />}/>
+        <Route path='/admin/edit-booking' element={<EditBooking />}/>
         <Route path='/admin/add-aircraft' element={<AddAircraft />}/>
-        <Route path='/admin/edit-airline/:id' element={<EditAirline />}/>
+        <Route path='/admin/edit-airline' element={<EditAirline />}/>
     </Routes>
     )
 };
