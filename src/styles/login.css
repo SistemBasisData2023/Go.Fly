@@ -1,0 +1,80 @@
+.login_img{
+    width: 60%;
+    text-align: center;
+}
+
+.login_img img{
+    width: 60%;
+    object-fit: contain;
+}
+
+.login_form{
+    padding: 40px;
+    position: relative;
+    border-style: solid;
+    border-color: #6E7491;
+}
+
+.login_container{
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    margin-top: 100px;
+    border-radius: 10px;
+}
+
+.login_form h2{
+    color: #6E7491;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+.login_form h1{
+    color: #6E7491;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.login_form{
+    width: 50%;
+    border-radius: 10px;
+}
+
+.login_form input[type="checkbox"]{
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.login_form input{
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #7C8DB0;
+    border-style: solid;
+    border-color: #6E7491;
+}
+
+.login_form input:focus{
+    outline: none;
+}
+
+.auth_btn{
+    background: red !important;
+    width: 100%;
+    color: #fff !important;
+}
+
+.login_form p{
+    font-size: 0.9rem;
+    color: #7C8DB0;
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.login_form p a{
+    color: red;
+    text-decoration: none;
+    margin-left: 5px;
+    font-weight: 500;
+}
