@@ -18,6 +18,7 @@
 
 - [@jordinia](https://github.com/Jordinia) - 2106655034
 - [@dyenta](https://www.github.com/dyenta) - 
+- 2106731245
 - [@fatimakhairunnisa](hhttps://github.com/fatimakhairunnisa) - 2106651515
 
 ---
