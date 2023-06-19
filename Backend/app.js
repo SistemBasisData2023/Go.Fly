@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const { testDatabaseConnection } = require('./src/config/config');
 const accountRoutes = require('./src/routes/accountRoutes');
@@ -9,6 +10,7 @@ const app = express();
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cors());
 
 // Routes
 app.use('/account', accountRoutes);

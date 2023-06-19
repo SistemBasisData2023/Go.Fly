@@ -8,28 +8,30 @@ const flightsControllers = {
         try {
             // Get the search parameters from the request
             const { departureAirport, arrivalAirport } = req.body;
-        
+
             // Build the search query
             const searchQuery = `
-                SELECT *
+                SELECT flights.*, airline_list.IATA AS airline_iata, airline_list.logo AS airline_logo, aircraft_model.model AS aircraft_model
                 FROM flights
+                INNER JOIN airline_list ON flights.flight_airline_id = airline_list.id
+                INNER JOIN aircraft_model ON flights.aircraft_id = aircraft_model.aircraft_id
                 WHERE 
                 departure_airport = $1
                 AND arrival_airport = $2
             `;
-        
+
             // Set the search values
             const searchValues = [departureAirport, arrivalAirport];
-        
+
             // Execute the search query
             const searchResult = await pool.query(searchQuery, searchValues);
-        
+
             // Retrieve the flights from the search result
             const flights = searchResult.rows;
-            
+
             const rowCount = searchResult.rowCount;
-  
-            res.json({ rowCount, flights});
+
+            res.json({ rowCount, flights });
         } catch (error) {
             console.error('Error searching flights', error);
             res.status(500).json({ message: 'Internal server error' });

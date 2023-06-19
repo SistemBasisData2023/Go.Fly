@@ -4,6 +4,8 @@ import japan from '../assets/images/japan.png'
 import delta from '../assets/images/delta.png'
 import { Link } from 'react-router-dom';
 import '../styles/search.css'
+
+
 const Search = () => {
   const listFlights = [
     {

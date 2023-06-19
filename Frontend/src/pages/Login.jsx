@@ -1,8 +1,9 @@
 import React, { useState } from "react"
 import {Container, Row, Col, Form, FormGroup, Button} from 'reactstrap'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import '../styles/login.css'
 import loginImg from '../assets/images/Plane.png'
+import axios from "axios";
 
 const Login = () => {
 
@@ -11,6 +12,7 @@ const Login = () => {
         password:undefined
     });
 
+    const navigate = useNavigate();
     const handleChange = e => {
         setCredentials(prev => ({... prev, [e.target.id]:e.target.value}))
     }
@@ -19,8 +21,40 @@ const Login = () => {
         e.preventDefault()
     }
 
-    function myFunction() {
-        alert("Login Successful!");
+    async function handleLogin() {
+        try {
+            console.log(credentials);
+            const body = {
+                email: credentials.email,
+                password: credentials.password
+            }
+
+            const {data} = await axios.post(
+                "http://localhost:3000/account/login",
+                body
+            );
+            console.log(data);
+            console.log("Login successful!");
+            alert("Login Successful!");
+            // Extract user and store it in localStorage
+            localStorage.setItem("user", JSON.stringify(data));
+            // Extract user_id and store it in localStorage
+            localStorage.setItem("user_id", data.user_id);
+            localStorage.setItem("isadmin", data.isadmin);
+            localStorage.setItem("surname", data.surname);
+            
+            if (data.isadmin) {
+                navigate("/admin");
+            } else {
+                navigate("/flight");
+                
+            }
+        } catch (error) {
+            console.log(error);
+            // Handle login failure
+            alert("Check your username or email!");
+            console.error("Login failed:", error.message);
+        }
       }
 
     return <section>
@@ -45,9 +79,7 @@ const Login = () => {
                                     <input type="checkbox" />
                                     <span>I agree to the terms and conditions</span>
                                 </label>
-                                <Link to="/flight">
-                                    <Button className="auth_btn btn secondary_btn" type="submit" onClick={myFunction} onChange={handleChange}>Login</Button>
-                                </Link>
+                                    <Button className="auth_btn btn secondary_btn" type="submit" onClick={handleLogin}>Login</Button>
                             </Form>
                             <p>Don’t Have an Account? <Link to='/register'>Sign Up!</Link></p>
                         </div>

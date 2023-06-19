@@ -69,11 +69,7 @@ const accountController = {
         registerUserValues
       );
       const user = userResult.rows[0];
-      const token = jwt.sign({ user_id: user.id }, process.env.TOKEN_KEY, {
-        expiresIn: '7d',
-      });
 
-      user.token = token;
       const response = {
       user,
       message: 'User registered successfully',
@@ -104,11 +100,11 @@ const accountController = {
 
       // Check if the password is correct
       const user = userResult.rows[0];
-      const isPasswordCorrect = (password == user.password);//harus diganti
+      //const isPasswordCorrect = (password == user.password);//harus diganti
       const isHashedPasswordCorrect = await bcrypt.compare(password, user.password);
-      const passwordCorrect = (!isPasswordCorrect || !isHashedPasswordCorrect);
+      const passwordCorrect = (!isHashedPasswordCorrect);
 
-      if (!passwordCorrect) {
+      if (passwordCorrect) {
         return res.status(401).json({ message: 'Incorrect password' });
       }
 
